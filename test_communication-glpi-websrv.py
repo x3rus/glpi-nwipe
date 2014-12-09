@@ -7,11 +7,22 @@ glpi.connect("adm-glpi", "4dmPkPas4dmin")
 
 
 
-ordi=glpi.getObject(
+ordi=glpi.listObjects(
         itemtype='Computer',
-        id=1,
+	serial='92OAAQ048009x2',
 )
 
-
 print ordi
+
+print 10 * "-"
+ordi=glpi.listInventoryObjects(
+	serial='92OAAQ048009',
+)
+print ordi
+
+#ordi=glpi.getObject(
+#        itemtype='Computer',
+#        id=1,
+#)
+
 
