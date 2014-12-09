@@ -15,7 +15,3 @@ ordi=glpi.getObject(
 
 print ordi
 
-print "========================"
-toto=glpi.list_objects(itemtype='Computer')
-
-print toto
