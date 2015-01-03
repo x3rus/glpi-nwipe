@@ -33,6 +33,30 @@ class XMLRPCClient(object):
         self.server = xmlrpclib.ServerProxy(self.serviceurl)
         self.logger = logging.getLogger()
 
+#    def updateObjects(self, fields=None):
+#	"""
+#	Suite a l'erreur d'utilisatoin de update je fait ma propre function 
+#	j'espere ne plus avoir l'Erreur
+#	Traceback (most recent call last):
+#	  File "glpi_update_and_wipe.py", line 87, in <module>
+#		    glpi.updateObjects(fields)
+##		  File "/home/xerus/ownCloud/git/glpi-nwipe/glpi_client/XMLRPCClient.py", line 96, in call
+#		    called_module = getattr(self.server, module)
+#	
+#	"""
+#
+##	print 10 * "-"
+#	print fields
+#        params = {}
+#        if self.session:
+#        	params['session'] = self.session
+#	
+#	params['fields'] = fields
+#
+#	respond = self.server.glpi.updateObjects(params)
+#
+#	print respond
+
     def connect(self, login_name=None, login_password=None):
         """
         Connect to a running GLPI instance with webservices
@@ -89,7 +113,7 @@ class XMLRPCClient(object):
                 params['session'] = self.session
 
             params = dict(params.items() + kwargs.items())
-
+	    
             called_module = getattr(self.server, module)
             return getattr(called_module, attr)(params)
 
