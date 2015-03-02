@@ -3,7 +3,7 @@
 French version available here : README-FR.md
 
 This script was originaly created when we had to wipe hundred computers and 
-update the inventory system GLPI (URL-project) with the new status. 
+update the inventory system (GLPI -> URL-project) with the new status. 
 
 We used the  dban cd (URL-project) for one or two computer it's ok , and manually updated the
 GLPI web site. 
