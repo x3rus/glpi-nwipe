@@ -183,6 +183,7 @@ if exitcode == 0 :
 	mydialog.add_buttons([    ("OK", 0) ])
 	mydialog.main()
 	call(["reset"])
+	# call(["nwipe","--autonuke"])
 else:
 	mydialog=DialogDisplay("Vous avez choisi de ne pas wiper la machine cette derniere sera donc eteinte , MERCI",0,0)
 	mydialog.add_buttons([    ("OK", 0) ])

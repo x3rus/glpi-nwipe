@@ -6,12 +6,12 @@ This script was originaly created when we had to wipe hundred computers and
 update the inventory system GLPI (URL-project) with the new status. 
 
 We used the  dban cd (URL-project) for one or two computer it's ok , and manually updated the
-GLPI web site. I use the glpi webservice plugins (URL) to communicate with the GLPI installation.
+GLPI web site. 
 
 This script should be use with a PXE server, you boot the computer on the network and   
 this scripts will :
 	- Retrieve the serial with OCS inventory agent
-	- Search for the computer in your GLPI installation (URL) 
+	- Search for the computer in your GLPI installation with webservices plugins
 	- Ask you to selected the computer (sometime serial number are associate to more than one computer)
 	- Update the status of the computer
 	- And wipe the Hard drive 
