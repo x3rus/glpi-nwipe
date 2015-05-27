@@ -6,13 +6,10 @@
 ###############
 
 debug=1;
-#glpi_server="http://glpi.magrit.int" # "http://goban.x3rus.com/glp"
-#glpi_user="adm-tboutry" #adm-glpi"
-#glpi_pass="******" #4dmPkPas4dmin
 
-glpi_server="http://goban.x3rus.com/glpi"
-glpi_user="adm-glpi"
-glpi_pass="4dmPkPas4dmin"
+glpi_server="http://glpi.x3rus.com/glpi"
+glpi_user="USER_GLPI"
+glpi_pass="PASSWORD_FOR_GLPI"
 
 glpi_rebut_state_id='2'
 
@@ -51,7 +48,7 @@ def menu(title, choices):
 	return urwid.ListBox(urwid.SimpleFocusListWalker(body))
 
 def item_chosen(button, choice):
-	# TODO: faire qqc de plus beau
+	# TODO: faire un menu plus beau
 	# dans la liste des choix j'affiche l'information suivante 
 	# id:83673 name:nom_machine contact:Thomas
 	# ici je manipule la sting pour extraire la valeur de l'id
@@ -76,9 +73,10 @@ id_machine_to_update=None
 lst_ordis=glpi.listObjects(itemtype='Computer',limit=20000)
 
 # Recuperation du numero de serie de la machine avec le meme outil qu'utilise GLPI
-# Execution d'un script c'etait plus simple quelque probleme avec le sudo : p, je strip aussi le retour chariot de la reponse.
-SSN_2_WIPE="92OAAQ048009"
-#SSN_2_WIPE=check_output(["./get_ssn.sh"]).rstrip('\n')
+# Execution d'un script c'etait plus simple quelque probleme avec le sudo : p, je strip aussi 
+# le retour chariot de la reponse.
+# il est important de definir le PATH complet j'ai eu des problemes avec un path relatif
+SSN_2_WIPE=check_output(["/usr/local/sysadmin/get_ssn.sh"]).rstrip('\n')
 
 
 if debug:
@@ -90,7 +88,6 @@ if debug:
 ordi2wipe=search_serial(SSN_2_WIPE,lst_ordis)
 
 if ordi2wipe != None :
-
 
 	if debug:
 		print (10 * "-")
