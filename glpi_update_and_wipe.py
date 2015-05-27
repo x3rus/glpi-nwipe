@@ -58,8 +58,8 @@ def item_chosen(button, choice):
 	#id_machine_to_update=choice.split()[0].split(':')
 	global id_machine_to_update
 	id_machine_to_update=choice
-	print "le choix : " + str(choice)
-	print " id  : " + str(id_machine_to_update)
+	print ("le choix : " + str(choice))
+	print (" id  : " + str(id_machine_to_update))
 	
 	raise urwid.ExitMainLoop()
 
@@ -82,8 +82,8 @@ SSN_2_WIPE="92OAAQ048009"
 
 
 if debug:
-	print "Le numero de serie a wipe est : " 
-	print "|"+SSN_2_WIPE+"|"
+	print ("Le numero de serie a wipe est : " )
+	print ("|"+SSN_2_WIPE+"|")
 
 
 #### recherche numero de serie dans la liste des machines ####
@@ -93,9 +93,9 @@ if ordi2wipe != None :
 
 
 	if debug:
-		print 10 * "-"
-		print "Machine trouver  :P "
-		print ordi2wipe
+		print (10 * "-")
+		print ("Machine trouver  :P ")
+		print (ordi2wipe)
 
 	lst_machine_menu=[]
 	for machine in ordi2wipe:
@@ -106,8 +106,8 @@ if ordi2wipe != None :
 		lst_machine_menu.append(msg_ordi)
 	
 	if debug:
-		print 5 * "-"
-		print lst_machine_menu
+		print (5 * "-")
+		print (lst_machine_menu)
 
 
 	# Affiche le menu 
@@ -118,8 +118,8 @@ if ordi2wipe != None :
 	urwid.MainLoop(top, palette=[('reversed', 'standout', '')]).run()
 		
 	if debug:
-		print "numero machine choisi : "
-		print id_machine_to_update
+		print ("numero machine choisi : ")
+		print (id_machine_to_update)
 
 	# id_machine_to_update ressemble a 
 	# print id_machine_to_update ==  id:2 nom:goban contact:xerus
@@ -129,8 +129,8 @@ if ordi2wipe != None :
 	info_ordi2wipe=glpi.getObject(itemtype='Computer',id=id_machine_selected)
 
 	if debug:
-		print 10 * "-"
-		print info_ordi2wipe 
+		print (10 * "-")
+		print (info_ordi2wipe )
 
 
 	#### Modification de la machine dans GLPI
@@ -163,7 +163,7 @@ else:
 	message_to_user+="Ceci est soit un problem ou la machine n'est pas dans GLPI \n\n"
 	message_to_user+="Est-ce que nous procedons avec la suppression du/des disque(s) ? \n" 
 
-	print message_to_user
+	print (message_to_user)
 
 	
 
@@ -178,7 +178,7 @@ mydialog.add_buttons([    ("Yes", 0), ("No", 1) ])
 exitcode, exitstring = mydialog.main()
 
 if exitcode == 0 :
-	print " KILL nwipe !!!" 
+	print (" KILL nwipe !!!" )
 	mydialog=DialogDisplay("Kill Wipe ",0,0)
 	mydialog.add_buttons([    ("OK", 0) ])
 	mydialog.main()
