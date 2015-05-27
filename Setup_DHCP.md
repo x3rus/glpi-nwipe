@@ -1,12 +1,12 @@
 == Description ==
 
-A basic dhcp setup, I'm not sure it's the best tutorial on Internet but it will give you a start.
+A basic dhcp setup, it's not the best tutorial on Internet but it will give you a start.
 
 I will setup a DHCP server for the network 192.168.10.0/24.
 The PXEServer have the IP : 192.168.10.5.
 DNS server : 192.168.10.10
 
-I use a CentOS 6 .
+I tested it on a Centos 6
 
 == Installation ==
 

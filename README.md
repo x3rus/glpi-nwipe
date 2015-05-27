@@ -2,26 +2,27 @@
 
 French version available here : README-FR.md
 
-This script was originaly created when we had to wipe hundred computers and 
-update the inventory system (GLPI -> URL-project) with the new status. 
+This script was originally created when we had to wipe hundred computers and 
+update the inventory system (GLPI : http://www.glpi-project.org) with the new status. 
 
-We used the  dban cd (URL-project) for one or two computer it's ok , and manually updated the
-GLPI web site. 
+Boot with the  dban cd (http://www.dban.org) and manually updated GLPI, it's ok for 
+one or two computer but after ... 
 
 This script should be use with a PXE server, you boot the computer on the network and   
 this scripts will :
-	- Retrieve the serial with OCS inventory agent
-	- Search for the computer in your GLPI installation with webservices plugins
+	- Retrieve the serial with OCS inventory agent (available from the PXE boot)
+	- Search for the computer in your GLPI with webservices plugins
 	- Ask you to selected the computer (sometime serial number are associate to more than one computer)
 	- Update the status of the computer
 	- And wipe the Hard drive 
 
-What you need to run use this script :
-- a DHCP 
+What you need to run this script :
+- a DHCP server
 - a PXE server  ( it must be a Linux system)
+- an NFS server (to provide an OS with the script)
 - a GLPI server with webservices-plugins installed.
 
-Big Thanks to ... for the classe glpi_client !
+Big Thanks to ... for the class glpi_client !
 
 == Installation ==
 
@@ -33,7 +34,6 @@ Big Thanks to ... for the classe glpi_client !
 script
 	- Setup PXEserver
 
-- Script installation and Configuration of the script 
 
 == Screenshot ===
 
